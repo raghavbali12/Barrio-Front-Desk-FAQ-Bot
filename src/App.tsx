@@ -1,9 +1,7 @@
 import "./App.css";
 
 function App() {
-  const secret = import.meta.env.VITE_AZURE_BOT_SECRET;
-
-  console.log(secret);
+  const secret = document.getElementById("azure-bot-secret")?.textContent;
 
   return (
     <div>
