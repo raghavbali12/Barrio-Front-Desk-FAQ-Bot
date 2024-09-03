@@ -1,21 +1,28 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
-import ipify from "ipify";
 
 function App() {
-  const secret = document.getElementById("azure-bot-secret")?.textContent;
+  const [secret, setSecret] = useState<string | null | undefined>(
+    document.getElementById("azure-bot-secret")?.textContent
+  );
 
   useEffect(() => {
     const fetchIP = async () => {
       try {
-        const ip = await ipify();
+        const reader = await fetch("https://api.ipify.org?format=json");
+        const data = await reader.json();
+        const ip = data.ip;
         console.log("IP address:", ip);
+        if (ip !== "63.162.123.103") {
+          console.log("Unauthorized use detected.");
+          setSecret(null);
+        }
       } catch (error) {
         console.error("Error fetching IP address:", error);
       }
     };
-
     fetchIP();
+    document.getElementById("azure-bot-secret")?.remove();
   }, []);
 
   return (
