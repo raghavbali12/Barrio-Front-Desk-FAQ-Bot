@@ -13,13 +13,14 @@ function App() {
         const reader = await fetch("https://api.ipify.org?format=json");
         const data = await reader.json();
         const ip = data.ip;
-        console.log("IP address:", ip);
         if (ip !== allowedIp) {
           console.log("Unauthorized use detected.");
           setSecret(null);
         }
       } catch (error) {
         console.error("Error fetching IP address:", error);
+        console.log("Unauthorized use detected.");
+        setSecret(null);
       }
     };
     fetchIP();
