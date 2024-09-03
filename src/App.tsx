@@ -5,6 +5,7 @@ function App() {
   const [secret, setSecret] = useState<string | null | undefined>(
     document.getElementById("azure-bot-secret")?.textContent
   );
+  const allowedIp = document.getElementById("allowed-ip")?.textContent;
 
   useEffect(() => {
     const fetchIP = async () => {
@@ -13,7 +14,7 @@ function App() {
         const data = await reader.json();
         const ip = data.ip;
         console.log("IP address:", ip);
-        if (ip !== "63.162.123.103") {
+        if (ip !== allowedIp) {
           console.log("Unauthorized use detected.");
           setSecret(null);
         }
@@ -23,7 +24,8 @@ function App() {
     };
     fetchIP();
     document.getElementById("azure-bot-secret")?.remove();
-  }, []);
+    document.getElementById("allowed-ip")?.remove();
+  }, [allowedIp]);
 
   return (
     <div>
