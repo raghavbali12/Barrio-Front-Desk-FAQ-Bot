@@ -1,7 +1,7 @@
 import "./App.css";
 
 function App() {
-  const secret = import.meta.env.VITE_APP_SECRET;
+  const secret = import.meta.env.VITE_AZURE_BOT_SECRET;
 
   return (
     <div>
