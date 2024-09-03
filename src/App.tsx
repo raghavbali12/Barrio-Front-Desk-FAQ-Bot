@@ -1,7 +1,22 @@
+import { useEffect } from "react";
 import "./App.css";
+import ipify from "ipify";
 
 function App() {
   const secret = document.getElementById("azure-bot-secret")?.textContent;
+
+  useEffect(() => {
+    const fetchIP = async () => {
+      try {
+        const ip = await ipify();
+        console.log("IP address:", ip);
+      } catch (error) {
+        console.error("Error fetching IP address:", error);
+      }
+    };
+
+    fetchIP();
+  }, []);
 
   return (
     <div>
