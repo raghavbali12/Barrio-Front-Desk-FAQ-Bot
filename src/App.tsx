@@ -43,8 +43,13 @@ function App() {
         style={{ minWidth: "400px", width: "100%", minHeight: "500px" }}
       ></iframe>
       <p>
-        Disclaimer: The bot can make mistakes, please review the answers
-        provided and use your best judgement.
+        <strong>
+          Disclaimer: The bot can make mistakes, please review the answers
+          provided and use your best judgement.
+        </strong>
+      </p>
+      <p>
+        If the bot is not responding, please refresh the page and try again.
       </p>
     </div>
   );
