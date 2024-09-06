@@ -34,7 +34,9 @@ function App() {
   return (
     <div>
       <img src={Logo} alt="Barrio Logo" height={80} width={80} />
-      <h1 style={{ color: "white-smoke" }}>Barrio Front Desk FAQ Bot</h1>
+      <h1 style={{ color: "white-smoke" }}>
+        Barrio Front Desk Virtual Assistant
+      </h1>
       <iframe
         src={
           "https://webchat.botframework.com/embed/RB-Language-Service-bot?s=" +
@@ -44,7 +46,7 @@ function App() {
       ></iframe>
       <p>
         <strong>
-          Disclaimer: The bot can make mistakes, please review the answers
+          Disclaimer: The assistant can make mistakes, please review the answers
           provided and use your best judgement.
         </strong>
       </p>
