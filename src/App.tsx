@@ -51,7 +51,8 @@ function App() {
         </strong>
       </p>
       <p>
-        If the bot is not responding, please refresh the page and try again.
+        If the assistant is not responding, please refresh the page and try
+        again.
       </p>
     </div>
   );
